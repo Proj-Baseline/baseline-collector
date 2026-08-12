@@ -1,0 +1,12 @@
+# Collector dependencies. This is the audited component (AGENTS.md hard rule
+# 7) — every entry here needs justification, and the list should stay this
+# short. Anything added here is something a user has to trust.
+#
+# pynput: global keyboard and mouse hooks. The alternative is raw
+# SetWindowsHookEx via ctypes with a manual message pump, which is the same
+# capability with more surface area to get wrong. Named explicitly in
+# AGENTS.md §4 as the sanctioned choice.
+#
+# Window identity needs NO dependency — collector/window.py calls Win32
+# directly through ctypes from the standard library.
+pynput
