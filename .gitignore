@@ -1,1 +1,13 @@
 .vscode/private-folder-alias.json
+
+# python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+build/
+dist/
+
+# local event databases — never commit
+*.db

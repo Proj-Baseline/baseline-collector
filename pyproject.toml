@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "baseline-collector"
+version = "0.1.0"
+description = "Passive capture to a local SQLite database for Baseline."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "AGPL-3.0-or-later"
+license-files = ["LICENSE"]
+# One runtime dependency, deliberately. This is the component users audit
+# rather than trust, so every addition here is something they have to read.
+# See requirements.txt for why pynput and why nothing else.
+dependencies = ["pynput"]
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[project.urls]
+Homepage = "https://github.com/Proj-Baseline/baseline-collector"
+
+[project.scripts]
+baseline-collector = "collector.__main__:main"
+
+[tool.setuptools]
+packages = ["collector"]
